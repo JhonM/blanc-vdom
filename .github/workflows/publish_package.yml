@@ -1,0 +1,26 @@
+name: PublishPackage
+on:
+  release:
+    types: [created]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install -g parcel-bundler
+      - run: npm install
+      - run: npm run test
+      - run: npm run build
+      - run: |
+          echo @jhonm:https://npm.pkg.github.com/ > dist/.npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_AUTH_TOKEN}' >> dist/.npmrc
+      - run: npm publish
+        working-directory: ./dist
+        env:
+          NPM_TOKEN: ${{secrets.GH_TOKEN}}
