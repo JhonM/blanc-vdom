@@ -39,6 +39,6 @@
     "jest-environment-jsdom": "^28.1.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/jhonm"
+    "@jhonm:registry": "https://npm.pkg.github.com"
   }
 }
