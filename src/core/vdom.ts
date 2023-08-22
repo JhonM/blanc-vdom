@@ -50,6 +50,8 @@ export const setProp = ({ target, name, value }: SetPropsType) => {
     target.addEventListener("click", (e: any) => value(e));
   } else if (name === "onchange") {
     target.addEventListener("change", (e: any) => value(e));
+  } else if (name === "onsubmit") {
+    target.addEventListener("submit", (e: any) => value(e));
   } else {
     target.setAttribute(name, value);
   }
