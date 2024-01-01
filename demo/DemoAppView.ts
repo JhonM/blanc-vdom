@@ -1,7 +1,7 @@
-import { h } from "../dist/module";
+import { h } from "../src/core";
 
 export const DemoAppView = h(
   "div",
   { id: "demo_app_view_id" },
-  "Demo App View"
+  "Demo App View, still"
 );
