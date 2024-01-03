@@ -1,23 +1,25 @@
 import { h } from "../src/core";
 import { buttonPlus, buttonMinus } from "./components/button";
+import { DispatchType, Model } from "./state/types";
+import { decrementCountMsg, incrementCountMsg } from "./state/update";
 
 function h1() {
   return h("H1", {}, "Simple Example");
 }
 
-export function DemoAppView() {
+export default function DemoAppView(dispatch: DispatchType, model: Model) {
   return h(
     "div",
     { id: "demo_app_view_id" },
     ...[
       h1(),
       buttonMinus({
-        onclick: () => console.info("Subtract"),
+        onclick: () => dispatch(decrementCountMsg(model.count)),
         text: "Subtract-",
       }),
-      h("div", {}, "fjskf"),
+      h("div", {}, model.count.toString()),
       buttonPlus({
-        onclick: () => console.info("Add"),
+        onclick: () => dispatch(incrementCountMsg(model.count)),
         text: "Add+",
       }),
     ]
