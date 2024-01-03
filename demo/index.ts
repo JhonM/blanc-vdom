@@ -1,6 +1,7 @@
-import { render } from "../src/core";
-import { DemoAppView } from "./DemoAppView";
+import view from "./DemoAppView";
+import initModel from "./state/model";
+import update from "./state/update";
+import app from "./state/app";
 
-const app = document.getElementById("app");
-
-app?.appendChild(render(DemoAppView()));
+const appContainer = document.getElementById("app");
+app(initModel, update, view, appContainer);
