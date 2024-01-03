@@ -3,4 +3,4 @@ import { DemoAppView } from "./DemoAppView";
 
 const app = document.getElementById("app");
 
-app?.appendChild(render(DemoAppView));
+app?.appendChild(render(DemoAppView()));
