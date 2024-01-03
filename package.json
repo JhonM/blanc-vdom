@@ -9,7 +9,7 @@
   "scripts": {
     "watch": "parcel watch ./src/index.ts",
     "build": "parcel build ./src/index.ts --dist-dir dist",
-    "start:demo": "parcel demo/index.html",
+    "start:demo": "parcel --port 4200 demo/index.html",
     "test": "jest"
   },
   "repository": {
