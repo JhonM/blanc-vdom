@@ -1,0 +1,1 @@
+export { setProps } from "./props";
