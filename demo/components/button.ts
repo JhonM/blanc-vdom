@@ -1,18 +1,15 @@
 import { h } from "../../src/core";
 
 interface ButtonProps {
-  onclick: () => void;
   text: string;
+  onclick?: () => void;
+  type?: string;
 }
 
-function button({ onclick, text }: ButtonProps) {
-  return h("button", { onclick }, text);
+function button({ text, ...props }: ButtonProps) {
+  return h("button", { ...props }, text);
 }
 
-export function buttonPlus(props: ButtonProps) {
-  return button(props);
-}
-
-export function buttonMinus(props: ButtonProps) {
+export function baseButton(props: ButtonProps) {
   return button(props);
 }
