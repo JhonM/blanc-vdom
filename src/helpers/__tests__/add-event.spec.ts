@@ -21,7 +21,7 @@ describe("add event", () => {
     attachEvent(props);
     target.click();
 
-    expect(target.addEventListener).toBeCalledWith("onclick", method, false);
+    expect(target.addEventListener).toBeCalledWith("click", method, false);
     expect(instanceMock).toBeCalledTimes(1);
   });
 });
