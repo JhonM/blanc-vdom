@@ -1,7 +1,7 @@
 import { attachEvent } from "./add-event";
 
 type SetPropsType = {
-  target: any;
+  target: Element;
   name: string;
   value: any;
 };
@@ -19,7 +19,7 @@ export const setProp = ({ target, name, value }: SetPropsType) => {
   }
 };
 
-export const setProps = (target: any, props: any) => {
+export const setProps = (target: Element, props: any) => {
   Object.keys(props).forEach((name) => {
     setProp({ target, name, value: props[name] });
   });
