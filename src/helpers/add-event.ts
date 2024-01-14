@@ -7,6 +7,6 @@ interface AddEventType {
 export const attachEvent = ({ target, event, method }: AddEventType) => {
   if (target.addEventListener) {
     const eventType = event.substring(2);
-    target.addEventListener(eventType, (e: Event) => method(e), false);
+    target.addEventListener(eventType, method, false);
   }
 };
