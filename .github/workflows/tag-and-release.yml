@@ -22,8 +22,8 @@ jobs:
         run: npm run build
       - name: Set up Git
         run: |
-          git config user.name "Yout GitHub User name"
-          git config user.email "Your GitHub User email"
+          git config user.name "JhonM"
+          git config user.email "jhonmajoor@gmail.com"
       - name: Get tag
         id: get_tag
         run: |
